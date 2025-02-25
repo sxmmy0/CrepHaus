@@ -23,11 +23,9 @@ class Cart():
             pass
         else:
             # self.cart[product_id] = {'price': str(product.price)}
-            self.cart[product_id] = str(product_qty)
+            self.cart[product_id] = int(product_qty)
 
         self.session.modified = True
-        
-
 
     def cart_total(self):
         # Get product IDS
@@ -71,9 +69,9 @@ class Cart():
         product_id = str(product)
         product_qty = int(quantity)
         # Get Cart
-        cart = self.cart
+        ourcart = self.cart
         #Update Cart
-        cart[product_id] = product_qty
+        ourcart[product_id] = product_qty
         
         self.session.modified = True
         
