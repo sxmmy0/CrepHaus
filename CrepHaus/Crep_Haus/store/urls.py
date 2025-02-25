@@ -4,7 +4,6 @@ from .views import home
 
 urlpatterns = [
     path('', views.home, name='home'),  # Homepage URL
-    path('accounts/', include('allauth.urls')), # URL for allauth authentication
     path('about/', views.about, name='about'),
     path('privacy/', views.privacy, name='privacy'),
     path('all_products', views.all_products, name='all_products'),

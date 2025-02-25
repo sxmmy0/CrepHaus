@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
+
 from . import settings
 from django.conf.urls.static import static
+
+import debug_toolbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('store.urls')),  # Include the store app URL configuration
+    path('accounts/', include('allauth.urls')), # URL for allauth authentication
+    path('cart/', include('cart.urls')),  # Include the cart app URL configuration
+    path('__debug__/', include(debug_toolbar.urls)), # Debug toolbar configuration
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Serve media files

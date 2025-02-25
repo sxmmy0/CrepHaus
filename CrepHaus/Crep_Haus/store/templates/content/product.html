@@ -1,0 +1,81 @@
+{% extends 'content/base.html' %} {% block content %}
+
+<section class="py-5">
+<div class="container px-4 px-lg-5 my-5">
+    <a href="{% url 'category' title=product.category.name %}" type="button" class="btn btn-light bi bi-caret-left">Return to Product Page</a>
+    <div class="row gx-4 gx-lg-5 align-items-center">
+    <div class="col-md-6">
+        <img
+        class="card-img-top mb-5 mb-md-0"
+        src="{{ product.image.url }}"
+        alt="..."
+        />
+    </div>
+    <div class="col-md-6">
+        <div class="small mb-1">{{ product.category }}</div>
+        <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+        {% comment %} <h2 class="lead">{{ product.description }}</h2> {% endcomment %}
+        {% if product.is_on_sale %}
+        <strike>£{{ product.price }}</strike>
+        <font color="red">£{{ product.sale_price }}</font>
+        <br />
+        {% else %} 
+        £{{ product.price }}
+        {% endif %}
+        <br />
+            <select class="form-select" aria-label="Default select example" id="qty-cart">
+                <option selected>Select Quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+            </select>
+        <br />
+        <div class="d-flex">
+        <button
+            type="button"
+            value="{{product.id}}"
+            class="btn btn-dark"
+            id="add-cart"
+        >
+            Add To Cart
+        </button>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+
+<script>
+// Check if button has been pressed
+$(document).on('click', '#add-cart', function(e){
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'cart_add' %}',
+        data: {
+            product_id: $('#add-cart').val(),
+            product_qty: $('#qty-cart option:selected').text(),
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            action: 'post',
+        },
+        success: function(json){
+              // console.log(json)
+            document.getElementById("cart_quantity").textContent = json.qty
+        },
+        error: function(xhr, errmsg, err){
+        },
+    });
+})
+</script>
+
+{% endblock %}
