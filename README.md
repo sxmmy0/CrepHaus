@@ -18,4 +18,7 @@ Apologies for the quality
 https://github.com/user-attachments/assets/7e8a6318-1c92-4a20-9229-007ef2c7f90a
 
 # Installation Instructions
-` git clone https://github.com/
+### Step 1. Clone My Repository
+` git clone [https://github.com/](https://github.com/sxmmy0/CrepHaus) `
+### Step 2. Build Docker Image
+- Completing the project fully before further instructions become available
