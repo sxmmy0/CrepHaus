@@ -10,6 +10,10 @@ from .forms import SignUpForm
 from django import forms
 
 # Create your views here.
+def category_summary(request):
+    categories = Category.objects.all()
+    return render(request, 'content/category_summary.html', {'categories': categories})
+
 def product_category(request, product_id):
     # Retrieve the product object based on the product_id
     try:
@@ -19,7 +23,7 @@ def product_category(request, product_id):
         return render(request, '404.html')
 
     # Render the product detail template, passing the product object
-    return render(request, 'product.html', {'product': product})
+    return render(request, 'content/product.html', {'product': product})
 
 def category(request, title):
     # Replace hyphens with spaces
