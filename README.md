@@ -1,24 +1,57 @@
-# Crep Haus
+# 👟 Crep Haus
 
-Crep Haus is an e-commerce store where you can "buy" your favourite trainers. There are a range of styles suited to your taste if you are a sneakerhead.
+**Crep Haus** is a full-stack e-commerce web application built for sneaker enthusiasts. It allows users to browse, select, and “buy” their favourite trainers from a range of styles and categories. Designed with a clean UI and user-first experience, this project showcases dynamic cart functionality, user authentication, and a responsive layout.
 
-## Project - Crep Haus
+---
 
-This project is for customers to view, browse and buy their favourite trainers. This application was built using Django and uses the following technologies: Python, CSS, HTML, Bootstrap and JavaScript.
-This is a FullStack application with a backend where users are able to register, be authenticated, add items to cart and use the website as intended. 
-### Features Implemented
-- Users are able to register and create an account
-- Users are able to add items to cart, increase quantity, delete items
-- Users are able to browse the website for their favourite styles
-- Users are able to input payment information, personal details to complete purchase
+## 📦 Tech Stack
 
-## Crep Haus Live Webpage
-Apologies for the quality
+- **Backend:** Python, Django
+- **Frontend:** HTML, CSS, Bootstrap, JavaScript
+- **Database:** SQLite (default Django setup)
+- **Tools:** Docker (in progress)
 
-https://github.com/user-attachments/assets/7e8a6318-1c92-4a20-9229-007ef2c7f90a
+---
 
-# Installation Instructions
-### Step 1. Clone My Repository
-` git clone [https://github.com/](https://github.com/sxmmy0/CrepHaus) `
-### Step 2. Build Docker Image
-- Completing the project fully before further instructions become available
+## 🔑 Key Features
+
+- 🧾 **User Authentication**: Register, log in, and manage accounts securely
+- 🛒 **Shopping Cart**: Add items, adjust quantities, remove products
+- 🔎 **Product Browsing**: Explore a curated list of sneaker styles
+- 💳 **Checkout Process**: Input payment and delivery details to simulate order placement
+
+---
+
+## 🚀 Live Demo
+
+🔗 [GitHub-hosted Screenshot or Demo](https://github.com/user-attachments/assets/7e8a6318-1c92-4a20-9229-007ef2c7f90a)
+
+> *Note: Live deployment coming soon – Docker setup in progress.*
+
+---
+
+## 🛠️ Installation Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/sxmmy0/CrepHaus
+cd CrepHaus
+```
+### 2. (Optional) Create a Virtual Environment
+```
+python -m venv venv
+source venv/bin/activate  # Windows: venv\\Scripts\\activate
+```
+### 3. Install Dependencies
+```
+pip install -r requirements.txt
+```
+### 4. Run Migrations
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+### 5. Run Server
+```
+python manage.py runserver
+```
