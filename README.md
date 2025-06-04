@@ -24,7 +24,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [GitHub-hosted Screenshot or Demo](https://github.com/user-attachments/assets/7e8a6318-1c92-4a20-9229-007ef2c7f90a)
+https://github.com/user-attachments/assets/7e8a6318-1c92-4a20-9229-007ef2c7f90a
 
 > *Note: Live deployment coming soon – Docker setup in progress.*
 
